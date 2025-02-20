@@ -1,23 +1,27 @@
-FROM golang:1.22-alpine AS builder
+FROM eclipse-temurin:21-jdk AS builder
 
-WORKDIR /usr/src/app
+WORKDIR /usr/src/app/
+
+COPY gradlew* settings.gradle* build.gradle* .
+COPY ./gradle ./gradle
+
+RUN chmod +x ./gradlew
+RUN ./gradlew downloadRepos
 
 COPY . .
+COPY ./pb ./proto
 
-RUN go mod download
+RUN chmod +x ./gradlew
+RUN ./gradlew installDist -PprotoSourceDir=./proto
 
-RUN go build -o /usr/src/app/product-catalog ./
-############################################
+######################################################
 
-FROM alpine:latest AS release
+FROM eclipse-temurin:21-jre
 
-WORKDIR /usr/src/app
+WORKDIR /usr/src/app/
 
-COPY ./products ./products
+COPY --from=builder /usr/src/app/ ./
 
-COPY --from=builder /usr/src/app/product-catalog ./
+ENV AD_PORT=9099
 
-ENV PRODUCT_CATALOG_PORT=8080
-EXPOSE 8080
-
-ENTRYPOINT ["./product-catalog"]
+ENTRYPOINT ["./build/install/opentelemetry-demo-ad/bin/Ad"]
