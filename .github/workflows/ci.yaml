@@ -1,8 +1,5 @@
 name: product-catalog-ci
 on:
-  push:
-    branches:
-      - main
   pull_request:
     branches:
       - main
@@ -34,13 +31,19 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # Install SonarScanner CLI.
       - name: Install SonarScanner CLI
         run: |
           wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.8.0.2856-linux.zip
           unzip sonar-scanner-cli-4.8.0.2856-linux.zip
-          sudo mv sonar-scanner-cli-4.8.0.2856-linux /opt/sonar-scanner
+          # The extracted folder is named "sonar-scanner-4.8.0.2856-linux"
+          sudo mv sonar-scanner-4.8.0.2856-linux /opt/sonar-scanner
           sudo ln -s /opt/sonar-scanner/bin/sonar-scanner /usr/local/bin/sonar-scanner
 
+      # Run SonarQube Analysis against your self-hosted server.
       - name: Run SonarQube Analysis
         env:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
@@ -63,49 +66,34 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: Build Docker Image
-        id: build
-        run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/product-catalog:${{ github.run_id }} -f src/product-catalog/Dockerfile src/product-catalog
-
-      # Scan the built Docker image with Trivy BEFORE pushing.
-      - name: Scan Docker Image with Trivy
-        id: trivy_scan
-        uses: aquasecurity/trivy-action@master
-        with:
-          image-ref: ${{ secrets.DOCKER_USERNAME }}/product-catalog:${{ github.run_id }}
-          severity: 'HIGH,CRITICAL'
-          format: 'table'
-
-      # Stop the workflow if vulnerabilities are found.
-      - name: Fail If Vulnerabilities Are Found
-        if: failure()
-        run: |
-          echo "Trivy scan detected vulnerabilities. Failing the build."
-          exit 1
-
-      # Only push the image if the Trivy scan passes (i.e., no vulnerabilities found).
       - name: Login to DockerHub
-        if: success()
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
 
-      - name: Push Docker Image
-        if: success()
+      - name: Build and Push Docker Image
+        id: build_push
+        uses: docker/build-push-action@v6
+        with:
+          context: src/product-catalog
+          file: src/product-catalog/Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKER_USERNAME }}/product-catalog:${{ github.run_id }}
+
+      # Scan the built Docker image with Trivy.
+      - name: Scan Docker Image with Trivy
         run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/product-catalog:${{ github.run_id }}
+          docker run --rm -v /var/run/docker.sock:/var/run/docker.sock aquasecurity/trivy:latest image --exit-code 1 --severity HIGH,CRITICAL ${{ secrets.DOCKER_USERNAME }}/product-catalog:${{ github.run_id }}
 
   updatek8s:
     runs-on: ubuntu-latest
     needs: docker
-    if: success()  # Only execute if Docker image was successfully built and pushed
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN}}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Update Kubernetes Manifest
         run: |
