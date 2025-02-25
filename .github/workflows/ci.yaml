@@ -8,24 +8,6 @@ on:
       - main
 
 jobs:
-  go-code-check:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
-      - name: Setup Go 1.22
-        uses: actions/setup-go@v2
-        with:
-          go-version: 1.22
-      
-      - name: Run golangci-lint
-        uses: golangci/golangci-lint-action@v6
-        with:
-          version: v1.55.2
-          run: golangci-lint run
-          working-directory: src/product-catalog
-
   build:
     runs-on: ubuntu-latest
     steps:
@@ -47,6 +29,24 @@ jobs:
         run: |
           cd src/product-catalog
           go test ./...
+
+  go-code-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Go 1.22
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.22
+      
+      - name: Run golangci-lint
+        uses: golangci/golangci-lint-action@v6
+        with:
+          version: v1.55.2
+          run: golangci-lint run
+          working-directory: src/product-catalog
 
   code-quality:
     runs-on: ubuntu-latest
