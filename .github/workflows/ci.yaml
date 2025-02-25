@@ -36,11 +36,13 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-
+    
     - name: Run golangci-lint
-      run: |
-        go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.56.2
-        golangci-lint run src/product-catalog/...
+      uses: golangci/golangci-lint-action@v6
+      with:
+        version: v1.55.2
+        run: golangci-lint run
+        working-directory: src/product-catalog
 
   docker:
     runs-on: ubuntu-latest
@@ -81,7 +83,7 @@ jobs:
     
     - name: Update tag in k8s manifest
       run: |
-         sed -i 's|image: .*/product-catalog:.*|image: ${{ secrets.DOCKER_USERNAME }}/product-catalog:${{ github.run_id }}|' kubernetes/productcatalog/deploy.yaml
+        sed -i "s|image: .*|image: ${{ secrets.DOCKER_USERNAME }}/product-catalog:${{github.run_id}}|" kubernetes/productcatalog/deploy.yaml
 
     - name: Commit and push changes
       run: |
