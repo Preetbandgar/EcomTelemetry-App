@@ -81,7 +81,14 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/product-catalog:${{ github.run_id }}
 
-      - name: Scan Docker Image with Trivy
+  trivy-scan:
+    runs-on: ubuntu-latest
+    needs: docker
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Run Trivy Scan
         run: |
           docker run --rm \
             -v /var/run/docker.sock:/var/run/docker.sock \
@@ -90,7 +97,7 @@ jobs:
 
   updatek8s:
     runs-on: ubuntu-latest
-    needs: docker
+    needs: trivy-scan  # Ensures this runs only if Trivy scan is successful
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
