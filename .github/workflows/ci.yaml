@@ -37,16 +37,13 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # Install SonarScanner CLI.
       - name: Install SonarScanner CLI
         run: |
           wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.8.0.2856-linux.zip
           unzip sonar-scanner-cli-4.8.0.2856-linux.zip
-          # The extracted folder is named "sonar-scanner-4.8.0.2856-linux"
           sudo mv sonar-scanner-4.8.0.2856-linux /opt/sonar-scanner
           sudo ln -s /opt/sonar-scanner/bin/sonar-scanner /usr/local/bin/sonar-scanner
 
-      # Run SonarQube Analysis against your self-hosted server.
       - name: Run SonarQube Analysis
         env:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
@@ -86,10 +83,10 @@ jobs:
 
       - name: Scan Docker Image with Trivy
         run: |
-               docker run --rm \
-               -v /var/run/docker.sock:/var/run/docker.sock \
-              -v $HOME/Library/Caches:/root/.cache/ \
-               aquasec/trivy:latest image --exit-code 1 --severity HIGH,CRITICAL ${{ secrets.DOCKER_USERNAME }}/product-catalog:${{ github.run_id }}
+          docker run --rm \
+            -v /var/run/docker.sock:/var/run/docker.sock \
+            -v $HOME/Library/Caches:/root/.cache/ \
+            aquasec/trivy:latest image --exit-code 1 --severity HIGH,CRITICAL ${{ secrets.DOCKER_USERNAME }}/product-catalog:${{ github.run_id }}
 
   updatek8s:
     runs-on: ubuntu-latest
