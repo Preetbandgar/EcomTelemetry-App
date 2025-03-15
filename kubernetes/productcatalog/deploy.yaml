@@ -1,5 +1,4 @@
 ---
-# Source: opentelemetry-demo/templates/component.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -22,7 +21,6 @@ spec:
   template:
     metadata:
       labels:
-        
         opentelemetry.io/name: opentelemetry-demo-productcatalogservice
         app.kubernetes.io/instance: opentelemetry-demo
         app.kubernetes.io/component: productcatalogservice
@@ -34,7 +32,6 @@ spec:
           image: preeet/product-catalog:13814238577
           imagePullPolicy: IfNotPresent
           ports:
-            
             - containerPort: 8080
               name: service
           env:
