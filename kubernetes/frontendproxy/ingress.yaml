@@ -1,6 +1,6 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
-metadata:
+metadata: 
   name: frontend-proxy
   annotations:
     alb.ingress.kubernetes.io/scheme: internet-facing
@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: alb
   rules:
-    - host: example.com
+    - host: www.devopswithpritam.info
       http:
         paths:
           - path: "/"
