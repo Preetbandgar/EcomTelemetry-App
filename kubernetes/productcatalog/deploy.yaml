@@ -29,7 +29,7 @@ spec:
       serviceAccountName: opentelemetry-demo
       containers:
         - name: productcatalogservice
-          image: preeet/product-catalog:13814238577
+          image: preeet/product-catalog:13876881785
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
