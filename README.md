@@ -95,7 +95,7 @@ Deployment was carried out using the **`complete-deploy.yaml`**, containing mani
 ✅ Designed and deployed a **highly available microservices-based application** on AWS EKS  
 ✅ Developed **infrastructure automation** using Terraform  
 ✅ Implemented **GitOps** workflows with Argo CD for automated deployments  
-✅ Automated CI/CD pipelines with GitHub Actions, including Docker image build, push, Trivy scans, and Argo CD sync  
+✅ Automated CI/CD pipelines with GitHub Actions, including Docker image build, push, Trivy scans and Argo CD sync  
 ✅ Configured **custom domain and DNS routing** using AWS Route 53: **www.devopsbypritam.info**  
 
 ## 📸 Screenshots & Demo Videos
