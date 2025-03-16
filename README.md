@@ -32,14 +32,14 @@ A high-level **Project Architecture Diagram** provides an overview of system des
 ✅ Microservices architecture deployed on **Kubernetes (EKS)**.  
 ✅ **Infrastructure as Code (IaC)** with **Terraform** for AWS provisioning.  
 ✅ Automated **CI/CD pipelines** via **GitHub Actions** and **Argo CD (GitOps)**.  
-✅ **Custom domain mapping** with AWS Route 53: www.devopsbypritam.info.  
+✅ **Custom domain mapping** with AWS Route 53: [www.devopswithpritam.info](./assets/screenshots/Otel_demo_custom-domain.png)  
 ✅ **End-to-End automation** from code commit to deployment.
 
 ## ☁️ Infrastructure Setup Using Terraform
 
 The complete infrastructure setup for this project has been implemented using the following GitHub repository:
 
-🔗 [Terraform AWS EKS Repository](https://github.com/Preetbandgar/EcomTelemetry-App.git)
+🔗 [Terraform AWS EKS Repository](https://github.com/Preetbandgar/Terraform-aws-eks.git)
 
 - Terraform modules are used to provision:
   - **EKS Cluster**
@@ -81,7 +81,7 @@ The application is accessed via the **frontendproxy service**, mapped to a **cus
 ### 🔧 Domain & DNS Configuration:  
 - Domain mapping and DNS setup have been thoroughly documented with screenshots and a dedicated demo video.
 
-📹 **[Video: Custom Domain Mapping Demo](./assets/custom-domain-demo.mp4)**
+📹 **[Video: Custom Domain Mapping Demo](./assets/videos/custom-domain-demo.mp4)**
 
 📌 **Route 53 & DNS Configuration Screenshots:**  
 - [Route 53 Hosted Zone Setup](./assets/screenshots/route53-hosted-zone.png)  
