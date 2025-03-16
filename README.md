@@ -29,11 +29,11 @@ A high-level **Project Architecture Diagram** provides an overview of system des
 
 ## ✨ Key Features
 
-✅ Microservices architecture deployed on **Kubernetes (EKS)**.  
-✅ **Infrastructure as Code (IaC)** with **Terraform** for AWS provisioning.  
-✅ Automated **CI/CD pipelines** via **GitHub Actions** and **Argo CD (GitOps)**.  
-✅ **Custom domain mapping** with AWS Route 53: [www.devopswithpritam.info](./assets/screenshots/Otel_demo_custom-domain.png)  
-✅ **End-to-End automation** from code commit to deployment.
+- Microservices architecture deployed on **Kubernetes (EKS)**
+- **Infrastructure as Code (IaC)** with **Terraform** for AWS provisioning
+- Automated **CI/CD pipelines** via **GitHub Actions** and **Argo CD (GitOps)**
+- **Custom domain mapping** with AWS Route 53: [www.devopswithpritam.info](./assets/screenshots/Otel_demo_custom-domain.png)
+- **End-to-End automation** from code commit to deployment
 
 ## ☁️ Infrastructure Setup Using Terraform
 
@@ -41,12 +41,12 @@ The complete infrastructure setup for this project has been implemented using th
 
 🔗 [Terraform AWS EKS Repository](https://github.com/Preetbandgar/Terraform-aws-eks.git)
 
-- Terraform modules are used to provision:
-  - **EKS Cluster**
-  - **VPC**
-  - **IAM Roles**
-  - **Route 53 Custom Domain Configuration**
-  - **S3 + DynamoDB (Terraform Backend State Management)**
+Terraform modules are used to provision:
+- **EKS Cluster**
+- **VPC**
+- **IAM Roles**
+- **Route 53 Custom Domain Configuration**
+- **S3 + DynamoDB (Terraform Backend State Management)**
 
 ## 🔄 CI/CD Pipeline and GitOps Implementation
 
@@ -56,13 +56,13 @@ Implemented an automated **CI/CD pipeline** using **GitHub Actions** and **Argo 
 
 | Stage                      | Description                                              |
 |----------------------------|----------------------------------------------------------|
-| **Build**                  | Compiles the application code.                          |
-| **Code-Quality**           | Runs code quality checks using **golangci-lint**.        |
-| **Go-Code-Check**          | Performs Go code analysis for best practices.            |
-| **Docker**                 | Builds the Docker image of the microservice.             |
-| **Trivy-Docker-Image-Scan**| Scans Docker images for vulnerabilities using **Trivy**. |
-| **UpdateK8s**              | Updates the Kubernetes manifest files with the new image tag. |
-| **Argo CD Sync**           | Argo CD automatically detects changes, syncs, and triggers a **rolling update** of the microservice deployment. |
+| **Build**                  | Compiles the application code                           |
+| **Code-Quality**           | Runs code quality checks using **SonarQube**            |
+| **Go-Code-Check**          | Performs Go code analysis for best practices            |
+| **Docker**                 | Builds the Docker image of the microservice             |
+| **Trivy-Docker-Image-Scan**| Scans Docker images for vulnerabilities using **Trivy** |
+| **UpdateK8s**              | Updates the Kubernetes manifest files with the new image tag |
+| **Argo CD Sync**           | Argo CD automatically detects changes, syncs, and triggers a **rolling update** of the microservice deployment |
 
 📌 **CI/CD Pipeline Screenshots:**  
 - [GitHub Actions Workflow Run](./assets/screenshots/github-actions-workflow.png)  
@@ -76,10 +76,10 @@ Implemented an automated **CI/CD pipeline** using **GitHub Actions** and **Argo 
 ## 🚀 Deployment Details
 
 The application is accessed via the **frontendproxy service**, mapped to a **custom domain** using **AWS Route 53**:  
-🌐 **www.devopsbypritam.info**
+🌐 [www.devopswithpritam.info](./assets/screenshots/Otel_demo_custom-domain.png)
 
 ### 🔧 Domain & DNS Configuration:  
-- Domain mapping and DNS setup have been thoroughly documented with screenshots and a dedicated demo video.
+Domain mapping and DNS setup have been thoroughly documented with screenshots and a dedicated demo video.
 
 📹 **[Video: Custom Domain Mapping Demo](./assets/videos/custom-domain-demo.mp4)**
 
@@ -92,25 +92,25 @@ Deployment was carried out using the **`complete-deploy.yaml`**, containing mani
 
 ## 🌟 Project Highlights
 
-✅ Designed and deployed a **highly available microservices-based application** on AWS EKS  
-✅ Developed **infrastructure automation** using Terraform  
-✅ Implemented **GitOps** workflows with Argo CD for automated deployments  
-✅ Automated CI/CD pipelines with GitHub Actions, including Docker image build, push, Trivy scans and Argo CD sync  
-✅ Configured **custom domain and DNS routing** using AWS Route 53: **www.devopsbypritam.info**  
+- Designed and deployed a **highly available microservices-based application** on AWS EKS
+- Developed **infrastructure automation** using Terraform
+- Implemented **GitOps** workflows with Argo CD for automated deployments
+- Automated CI/CD pipelines with GitHub Actions, including Docker image build, push, Trivy scans and Argo CD sync
+- Configured **custom domain and DNS routing** using AWS Route 53: *www.devopswithpritam.info*
 
 ## 📸 Screenshots & Demo Videos
 
 Screenshots and video assets are available in the `/assets` folder:  
-🖼️ **Infrastructure Setup**  
-🖼️ **CI/CD Pipelines**  
-🖼️ **DNS/Route 53 Configuration**  
-📹 **Video Walkthroughs** (including custom domain mapping)
+- **Infrastructure Setup**  
+- **CI/CD Pipelines**  
+- **DNS/Route 53 Configuration**  
+- **Video Walkthroughs** (including custom domain mapping)
 
 ## 💡 Open Source Acknowledgement
 
-This project is **inspired by OpenTelemetry**, and full credit goes to the **OpenTelemetry team** and **Abhishek Veermalla**.  
+This project is **inspired by OpenTelemetry**, and full credit goes to the **OpenTelemetry team** and **Mr. Abhishek Veermalla**.  
 Abhishek worked hard to create the necessary files for this project, explained them in detail, and demonstrated their usage.  
 Please check out his GitHub profile for more insightful content and projects:  
-👉 **[Abhishek Veermalla's GitHub](https://github.com/iam-veeramalla)**
+👉 **[Abhishek's GitHub](https://github.com/iam-veeramalla)**
 
 ## 🙏 Thank You :)
