@@ -33,7 +33,7 @@ A high-level **Project Architecture Diagram** provides an overview of system des
 
 The complete infrastructure setup for this project has been implemented using the following GitHub repository:
 
-🔗 **[Terraform AWS EKS Repository](#)** [Terraform AWS EKS Repository](https://github.com/Preetbandgar/EcomTelemetry-App.git)
+🔗 [Terraform AWS EKS Repository](https://github.com/Preetbandgar/EcomTelemetry-App.git)
 
 This repo includes all necessary **Terraform code** to provision AWS resources:  
 ✅ Elastic Kubernetes Service (**EKS**)  
