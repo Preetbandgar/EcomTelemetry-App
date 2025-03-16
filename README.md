@@ -2,9 +2,10 @@
 
 ## 📝 Project Overview
 
-**EcomTelemetry** is an open-source, microservices-based **e-commerce** application inspired by the **OpenTelemetry Demo** project. It demonstrates **observability**, **scalability**, and **automation** best practices for deploying and managing modern cloud-native applications on AWS using Kubernetes.
+EcomTelemetry is an open-source, microservices-based **e-commerce** application, inspired by the **OpenTelemetry Demo** project. It demonstrates **observability**, **scalability**, and **automation** best practices for deploying and managing modern cloud-native applications on AWS using Kubernetes.
 
-This project demonstrates end-to-end DevOps practices, including CI/CD pipelines, infrastructure automation, and GitOps deployment, providing a practical example for DevOps and cloud professionals.
+This project showcases a complete **CI/CD workflow**, **infrastructure provisioning**, and **GitOps** deployment strategies—making it a comprehensive example for **DevOps engineers** and **cloud practitioners**.
+
 ---
 
 ## ✨ Key Features
@@ -12,9 +13,9 @@ This project demonstrates end-to-end DevOps practices, including CI/CD pipelines
 ✅ Microservices architecture deployed on **Kubernetes (EKS)**  
 ✅ **Infrastructure as Code (IaC)** with **Terraform** for AWS provisioning  
 ✅ Automated **CI/CD pipelines** via **GitHub Actions** and **Argo CD (GitOps)**  
-✅ **Custom domain mapping** with **AWS Route 53**  
+✅ **Custom domain mapping** with AWS Route 53: **www.devopsbypritam.info**  
 ✅ **End-to-End automation** from code commit to deployment  
-✅ Comprehensive **observability** inspired by **OpenTelemetry**  
+✅ Comprehensive **observability** inspired by OpenTelemetry  
 ✅ Fully documented **architecture diagrams**, **screenshots**, and **demo videos**
 
 ---
@@ -34,20 +35,20 @@ The complete infrastructure setup for this project has been implemented using th
 
 🔗 [Terraform AWS EKS Repository](https://github.com/Preetbandgar/EcomTelemetry-App.git)
 
-This repository includes all necessary **Terraform code** to provision AWS resources:  
+This repo includes all necessary **Terraform code** to provision AWS resources:  
 ✅ Elastic Kubernetes Service (**EKS**)  
 ✅ Virtual Private Cloud (**VPC**)  
 ✅ IAM roles & policies  
 ✅ Security Groups  
-✅ S3 Buckets  
-✅ DynamoDB (for remote state locking and consistency)
+✅ S3 buckets  
+✅ DynamoDB (for state locking)
 
 ---
 
 ## 💡 Open Source Acknowledgement
 
 This project is **inspired by OpenTelemetry**, and full credit goes to the **OpenTelemetry team** and **Abhishek Veermalla**.  
-Abhishek worked hard to create the foundational files for this project, explained them in detail, and demonstrated their usage.  
+Abhishek worked hard to create the necessary files for this project, explained them in detail, and demonstrated their usage.  
 Please check out his GitHub profile for more insightful content and projects:  
 👉 **[Abhishek Veermalla's GitHub](https://github.com/iam-veeramalla)**
 
@@ -55,10 +56,13 @@ Please check out his GitHub profile for more insightful content and projects:
 
 ## 🚀 Deployment Details
 
-The application is accessed via the **frontendproxy service**, mapped to a **custom domain** using **AWS Route 53**.
+The application is accessed via the **frontendproxy service**, mapped to a **custom domain** using **AWS Route 53**:  
+🌐 **www.devopsbypritam.info**
 
-### 🔧 Domain & DNS Configuration  
-Domain mapping and DNS setup have been thoroughly documented with screenshots and demo videos for clarity.
+### 🔧 Domain & DNS Configuration:  
+- Domain mapping and DNS setup have been thoroughly documented with screenshots and a dedicated demo video.
+
+📹 **[Video: Custom Domain Mapping Demo](./assets/custom-domain-demo.mp4)**
 
 📌 **Route 53 & DNS Configuration Screenshots:**  
 - [Route 53 Hosted Zone Setup](./assets/route53-hosted-zone.png)  
@@ -71,48 +75,26 @@ Deployment was carried out using the **`complete-deploy.yaml`**, containing mani
 
 ## 🔄 CI/CD Pipeline and GitOps Implementation
 
-The project implements an end-to-end **CI/CD pipeline** using **GitHub Actions** integrated with **Argo CD**, managing the build, scan, deployment, and synchronization workflows.
+Implemented an automated **CI/CD pipeline** using **GitHub Actions** and **Argo CD**, specifically managing the deployment of the `productcatalog` microservice.
 
-### ⚙️ CI/CD Workflow Details
+### ⚙️ CI/CD Workflow Stages:
 
-Each time a **push** or **pull_request** event occurs in the GitHub repository, the following stages are triggered as part of the **CI/CD pipeline**:
+| Stage                      | Description                                              |
+|----------------------------|----------------------------------------------------------|
+| **Build**                  | Compiles the application code.                          |
+| **Code-Quality**           | Runs code quality checks using **golangci-lint**.        |
+| **Go-Code-Check**          | Performs Go code analysis for best practices.            |
+| **Docker**                 | Builds the Docker image of the microservice.             |
+| **Trivy-Docker-Image-Scan**| Scans Docker images for vulnerabilities using **Trivy**. |
+| **UpdateK8s**              | Updates the Kubernetes manifest files with the new image tag. |
+| **Argo CD Sync**           | Argo CD automatically detects changes, syncs, and triggers a **rolling update** of the microservice deployment. |
 
-1. **`build`**  
-   ✅ Compile and build the `productcatalog` microservice code (Go application).  
-   ✅ Validate the build output for correctness.
-
-2. **`code-quality`**  
-   ✅ Run **SonarQube** for static code analysis and enforce quality gates.  
-   ✅ Ensure code adheres to best practices and maintainability standards.
-
-3. **`go-code-check`**  
-   ✅ Execute **GolangCI-Lint** for Go code linting.  
-   ✅ Identify and fix coding issues, inefficiencies, and potential bugs.
-
-4. **`docker`**  
-   ✅ Build Docker images of the `productcatalog` microservice.  
-   ✅ Tag and push images to **DockerHub** securely.
-
-5. **`trivy-docker-image-scan`**  
-   ✅ Scan Docker images with **Trivy** for security vulnerabilities and misconfigurations.  
-   ✅ Block the pipeline if critical vulnerabilities are detected.
-
-6. **`updatek8s`**  
-   ✅ Update Kubernetes deployment manifests (e.g., new Docker image tag).  
-
-7. **Argo CD GitOps Sync**  
-   ✅ Argo CD automatically syncs the updated Kubernetes manifests from GitHub.  
-   ✅ Triggers rolling updates in the EKS cluster, ensuring zero downtime deployment.
-
----
-
-📌 **CI/CD Pipeline Screenshots**  
+📌 **CI/CD Pipeline Screenshots:**  
 - [GitHub Actions Workflow Run](./assets/github-actions-workflow.png)  
-- [SonarQube Code Quality Report](./assets/sonarqube-report.png)  
-- [GolangCI-Lint Code Check](./assets/golangci-lint.png)  
+- [GolangCI-Lint Code Quality Check](./assets/code-quality-check.png)  
 - [Docker Image Build & Push](./assets/docker-image-push.png)  
-- [Trivy Docker Image Scan Results](./assets/trivy-scan-results.png)  
-- [Kubernetes Manifest Update](./assets/k8s-manifest-update.png)  
+- [Trivy Image Scan Results](./assets/trivy-docker-scan.png)  
+- [Kubernetes Manifest Update](./assets/update-k8s.png)  
 - [Argo CD Sync Operation](./assets/argo-cd-sync.png)  
 - [Rolling Update in Progress](./assets/rolling-update.png)
 
@@ -120,17 +102,17 @@ Each time a **push** or **pull_request** event occurs in the GitHub repository, 
 
 ## 🛠️ Tech Stack
 
-| Category              | Tools & Technologies        |
-|-----------------------|-----------------------------|
-| ☁️ Cloud Provider     | AWS                         |
-| 🚢 Orchestration      | Kubernetes (EKS)            |
-| ⚙️ Infrastructure     | Terraform                   |
-| 🔄 CI/CD              | GitHub Actions, Argo CD     |
-| 🐳 Containers         | Docker                      |
-| 🔐 Vulnerability Scan | Trivy                       |
-| ✅ Code Quality       | SonarQube, GolangCI-Lint    |
-| 🌐 DNS/Domain         | AWS Route 53                |
-| 📦 Artifact Registry  | DockerHub                   |
+| Category                 | Tools & Technologies    |
+|--------------------------|------------------------ |
+| ☁️ Cloud Provider        | AWS                     |
+| 🚢 Orchestration         | Kubernetes (EKS)        |
+| ⚙️ IaC                   | Terraform               |
+| 🔄 CI/CD                 | GitHub Actions, Argo CD |
+| 🐳 Containers            | Docker                  |
+| 🌐 DNS/Domain            | AWS Route 53            |
+| 📦 Artifact Registry     | DockerHub               |
+| 🔒 Security Scanning     | Trivy                   |
+| 📝 Code Quality          | GolangCI-Lint           |
 
 ---
 
@@ -138,10 +120,10 @@ Each time a **push** or **pull_request** event occurs in the GitHub repository, 
 
 ✅ Designed and deployed a **highly available microservices-based application** on AWS EKS  
 ✅ Developed **infrastructure automation** using Terraform  
-✅ Implemented **GitOps workflows** with Argo CD for automated deployments  
-✅ Automated **CI/CD pipelines** with GitHub Actions, covering the entire build-to-deploy lifecycle  
-✅ Integrated **code quality checks**, **security scans**, and **linting tools**  
-✅ Configured **custom domain and DNS routing** using AWS Route 53  
+✅ Implemented **GitOps** workflows with Argo CD for automated deployments  
+✅ Automated CI/CD pipelines with GitHub Actions, including Docker image build, push, Trivy scans, and Argo CD sync  
+✅ Configured **custom domain and DNS routing** using AWS Route 53: **www.devopsbypritam.info**  
+✅ Delivered complete documentation, diagrams, screenshots, and videos for **easy reproducibility**
 
 ---
 
@@ -151,10 +133,8 @@ Screenshots and video assets are available in the `/assets` folder (or as per yo
 🖼️ **Infrastructure Setup**  
 🖼️ **CI/CD Pipelines**  
 🖼️ **DNS/Route 53 Configuration**  
-📹 **Video Walkthroughs**
+📹 **Video Walkthroughs** (including custom domain mapping)
 
 ---
 
-## 🙏 Thank You!
-
----
+## 🙏 Thank You :)
