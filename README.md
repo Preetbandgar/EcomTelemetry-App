@@ -35,14 +35,12 @@ The complete infrastructure setup for this project has been implemented using th
 
 🔗 [Terraform AWS EKS Repository](https://github.com/Preetbandgar/EcomTelemetry-App.git)
 
-This repo includes all necessary **Terraform code** to provision AWS resources:  
-✅ Elastic Kubernetes Service (**EKS**)  
-✅ Virtual Private Cloud (**VPC**)  
-✅ IAM roles & policies  
-✅ Security Groups  
-✅ S3 buckets  
-✅ DynamoDB (for state locking)
-
+- Terraform modules are used to provision:
+  - **EKS Cluster**
+  - **VPC**
+  - **IAM Roles**
+  - **Route 53 Custom Domain Configuration**
+  - **S3 + DynamoDB (Terraform Backend State Management)**
 ---
 
 ## 💡 Open Source Acknowledgement
