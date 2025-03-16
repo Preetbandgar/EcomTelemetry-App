@@ -70,16 +70,9 @@ Deployment was carried out using the **`complete-deploy.yaml`**, containing mani
 
 ---
 
-## 🗺️ Project Services Architecture
-
-📌 **Services Architecture Diagram:**  
-![Services Architecture Diagram](./assets/services-architecture.png)
-
----
-
 ## 🔄 CI/CD Pipeline and GitOps Implementation
 
-I implemented an automated **CI/CD pipeline** leveraging **GitHub Actions** and **Argo CD**, specifically managing the deployment of the `productcatalog` microservice.
+Implemented an automated **CI/CD pipeline** using **GitHub Actions** and **Argo CD**, specifically managing the deployment of the `productcatalog` microservice.
 
 ### ⚙️ CI/CD Workflow Details:
 ✅ On **push** or **pull_request** events:  
@@ -120,16 +113,6 @@ I implemented an automated **CI/CD pipeline** leveraging **GitHub Actions** and 
 ✅ Automated CI/CD pipelines with GitHub Actions, including Docker image build, push, and Argo CD sync  
 ✅ Configured **custom domain and DNS routing** using AWS Route 53  
 ✅ Delivered complete documentation, diagrams, screenshots, and videos for **easy reproducibility**
-
----
-
-## 🔗 Repository Access & Portfolio
-
-The complete project, along with detailed documentation, architecture diagrams, screenshots, and demo videos, will be available at:  
-➡️ **GitHub Profile:** [Insert GitHub URL]  
-➡️ **Portfolio Website:** [Insert Portfolio URL]  
-
-Repository links will be shared in my **CV**.
 
 ---
 
