@@ -43,12 +43,6 @@ This repo includes all necessary **Terraform code** to provision AWS resources:
 ✅ S3 buckets  
 ✅ DynamoDB (for state locking)
 
-📌 **Terraform Infrastructure Setup Screenshots:**  
-- [VPC & Subnets Provisioning](./assets/vpc-subnets.png)  
-- [EKS Cluster Creation](./assets/eks-cluster.png)  
-- [IAM Roles & Policies](./assets/iam-roles.png)  
-- [S3 Backend Configuration](./assets/s3-backend.png)
-
 ---
 
 ## 💡 Open Source Acknowledgement
