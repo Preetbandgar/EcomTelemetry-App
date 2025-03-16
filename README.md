@@ -96,7 +96,7 @@ Deployment was carried out using the **`complete-deploy.yaml`**, containing mani
 - Developed **infrastructure automation** using Terraform
 - Implemented **GitOps** workflows with Argo CD for automated deployments
 - Automated CI/CD pipelines with GitHub Actions, including Docker image build, push, Trivy scans and Argo CD sync
-- Configured **custom domain and DNS routing** using AWS Route 53: *www.devopswithpritam.info*
+- Configured **custom domain and DNS routing** using AWS Route 53: [www.devopswithpritam.info](./assets/screenshots/Otel_demo_custom-domain.png)
 
 ## 📸 Screenshots & Demo Videos
 
