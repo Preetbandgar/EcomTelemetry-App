@@ -77,7 +77,7 @@ Implemented an automated **CI/CD pipeline** using **GitHub Actions** and **Argo 
 ### ⚙️ CI/CD Workflow Details:
 ✅ On **push** or **pull_request** events:  
 - GitHub Actions build a **Docker image**  
-- Push it to **DockerHub** (or ECR)  
+- Push it to **DockerHub** 
 - Update the **image tag** in the Git repo  
 - Argo CD detects changes, syncs, and performs a **rolling update**
 
@@ -91,17 +91,16 @@ Implemented an automated **CI/CD pipeline** using **GitHub Actions** and **Argo 
 
 ## 🛠️ Tech Stack
 
-| Category                 | Tools & Technologies   |
-|--------------------------|------------------------|
-| ☁️ Cloud Provider        | AWS                   |
-| 🚢 Orchestration         | Kubernetes (EKS)      |
-| ⚙️ IaC                  | Terraform             |
-| 🔄 CI/CD                | GitHub Actions, Argo CD |
-| 🐳 Containers           | Docker                |
-| 🔍 Observability         | OpenTelemetry         |
-| 🌐 DNS/Domain            | AWS Route 53          |
-| 📦 Artifact Registry     | DockerHub / ECR       |
-| 🔧 Version Control       | GitHub                |
+| Category                 | Tools & Technologies    |
+|--------------------------|------------------------ |
+| ☁️ Cloud Provider        | AWS                     |
+| 🚢 Orchestration         | Kubernetes (EKS)        |
+| ⚙️ IaC                   | Terraform               |
+| 🔄 CI/CD                 | GitHub Actions, Argo CD |
+| 🐳 Containers            | Docker                  |
+| 🌐 DNS/Domain            | AWS Route 53            |
+| 📦 Artifact Registry     | DockerHub               |
+
 
 ---
 
