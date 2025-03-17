@@ -65,13 +65,13 @@ Implemented an automated **CI/CD pipeline** using **GitHub Actions** and **Argo 
 | **Argo CD Sync**           | Argo CD automatically detects changes, syncs, and triggers a **rolling update** of the microservice deployment |
 
 📌 **CI/CD Pipeline Screenshots:**  
-- [GitHub Actions Workflow Run](./assets/screenshots/github-actions-workflow.png)  
-- [GolangCI-Lint Code Quality Check](./assets/screenshots/code-quality-check.png)  
-- [Docker Image Build & Push](./assets/screenshots/docker-image-push.png)  
-- [Trivy Image Scan Results](./assets/screenshots/trivy-docker-scan.png)  
-- [Kubernetes Manifest Update](./assets/screenshots/update-k8s.png)  
-- [Argo CD Sync Operation](./assets/screenshots/argo-cd-sync.png)  
-- [Rolling Update in Progress](./assets/screenshots/rolling-update.png)
+  [GitHub Actions Workflow Run](https://github.com/Preetbandgar/EcomTelemetry-App/actions/runs/13877069831)  
+  [GolangCI-Lint Code Quality Check](./assets/screenshots/code-quality-check.png)  
+  [Docker Image Build & Push](./assets/screenshots/docker-image-push.png)  
+  [Trivy Image Scan Results](./assets/screenshots/trivy-docker-scan.png)  
+  [Kubernetes Manifest Update](./assets/screenshots/update-k8s.png)  
+  [Argo CD Sync Operation](./assets/screenshots/argo-cd-sync.png)  
+  [Rolling Update in Progress](./assets/screenshots/rolling-update.png)
 
 ## 🚀 Deployment Details
 
