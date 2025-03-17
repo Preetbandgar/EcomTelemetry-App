@@ -33,7 +33,7 @@ A high-level architecture diagram highlights the system design and component int
 - **Infrastructure as Code (IaC)** with **Terraform**
 - Automated **CI/CD pipelines** using **GitHub Actions** and **Argo CD (GitOps)**
 - **Custom domain** routing via **AWS Route 53**  
-  🌐 [www.devopswithpritam.info](https://www.devopswithpritam.info) (Refer to screenshots below for demonstration)
+  🌐 [www.devopswithpritam.info](https://www.devopswithpritam.info)(./assets/screenshots/Otel_demo_custom-domain.png)
 - End-to-end **automation** from code commit to deployment
 
 ## ☁️ Infrastructure Setup with Terraform
@@ -62,7 +62,7 @@ An automated **CI/CD pipeline** was implemented with **GitHub Actions** and **Ar
 | **Docker Build & Push** | Builds and pushes Docker images to **DockerHub**              |
 | **Image Scan**          | Scans Docker images for vulnerabilities using **Trivy**       |
 | **K8s Manifest Update** | Updates Kubernetes manifests with the new image tag           |
-| **Argo CD Sync**        | Syncs with Argo CD and triggers rolling updates automatically |
+| **Argo CD Sync**        | Syncs with **Argo CD** and triggers rolling updates automatically |
 
 📌 **CI/CD Workflow Links & Screenshots**  
 - [GitHub Actions Workflow Run](https://github.com/Preetbandgar/EcomTelemetry-App/actions/runs/13877069831)  
@@ -81,7 +81,8 @@ An automated **CI/CD pipeline** was implemented with **GitHub Actions** and **Ar
   ![App Status](./assets/screenshots/Argocd_productcatalog-app-successful.png)
 
 The application was exposed via the **frontendproxy service**, mapped to the custom domain:  
-🌐 [www.devopswithpritam.info](https://www.devopswithpritam.info)
+
+🌐 [www.devopswithpritam.info](https://www.devopswithpritam.info)(./assets/screenshots/Otel_demo_custom-domain.png)
 
 > ✅ Note: The application was successfully deployed and accessible during the demonstration phase. The screenshots provided illustrate the complete deployment lifecycle.
 
