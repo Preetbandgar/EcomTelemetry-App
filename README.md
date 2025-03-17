@@ -64,11 +64,12 @@ Implemented an automated **CI/CD pipeline** using **GitHub Actions** and **Argo 
 | **UpdateK8s** | Updates the Kubernetes manifest files with the new image tag |
 | **Argo CD Sync** | Argo CD automatically detects changes, syncs, and triggers a **rolling update** of the microservice deployment |
 
-📌 **CI/CD Pipeline Workflow Links:**
+📌 **CI/CD Pipeline Workflow Links & Screenshots:**
 - [GitHub Actions Workflow Run](https://github.com/Preetbandgar/EcomTelemetry-App/actions/runs/13877069831)
-- [GolangCI-Lint Code Quality Check](https://github.com/Preetbandgar/EcomTelemetry-App/actions/runs/13877069831/job/38830720174)
+- [SonarQube Code-Quality Check](./assets/screenshots/Sonarqube_Code_Quality.png)
+- [GolangCI-Lint Go-Code-Check](https://github.com/Preetbandgar/EcomTelemetry-App/actions/runs/13877069831/job/38830720174)
 - [Docker Image Build & Push](https://github.com/Preetbandgar/EcomTelemetry-App/actions/runs/13877069831/job/38830720176)
-- [Trivy Image Scan Results](https://github.com/Preetbandgar/EcomTelemetry-App/actions/runs/13877069831/job/38830729444)
+- [Trivy Docker Image Scan Results](https://github.com/Preetbandgar/EcomTelemetry-App/actions/runs/13877069831/job/38830729444)
 - [Kubernetes Manifest Update](https://github.com/Preetbandgar/EcomTelemetry-App/actions/runs/13877069831/job/38830732368)
 
 ### 📌 Argo CD Sync and Deployment Status:
@@ -84,12 +85,13 @@ The application is accessed via the **frontendproxy service**, mapped to a **cus
 
 ### 🔧 Domain & DNS Configuration:
 
-📹 **[Video: Custom Domain Mapping Demo](./assets/videos/custom-domain-demo.mp4)**
+📌 **Route 53 & DNS Configuration Screenshots:**  
 
-📌 **Route 53 & DNS Configuration Screenshots:**
-- [Route 53 Hosted Zone Setup](./assets/screenshots/route53-hosted-zone.png)
-- [DNS Records for Domain Mapping](./assets/screenshots/dns-records.png)
-- [FrontendProxy Service Exposure](./assets/screenshots/frontendproxy-service.png)
+- **DNS Records for Domain Mapping**  
+  ![DNS Records](./assets/screenshots/dns-records.png)
+
+- **FrontendProxy Service Exposure**  
+  ![FrontendProxy Service](./assets/screenshots/Opentelemetry-frontendproxy-demo-eks.mp4)
 
 Deployment was carried out using the [`complete-deploy.yaml`](./kubernetes/complete-deploy.yaml), containing manifests for all **microservices** and **Kubernetes components**.
 
@@ -100,14 +102,6 @@ Deployment was carried out using the [`complete-deploy.yaml`](./kubernetes/compl
 - Implemented **GitOps** workflows with Argo CD for automated deployments
 - Automated CI/CD pipelines with GitHub Actions, including Docker image build, push, Trivy scans and Argo CD sync
 - Configured **custom domain and DNS routing** using AWS Route 53: [www.devopswithpritam.info](https://www.devopswithpritam.info)
-
-## 📸 Screenshots & Demo Videos
-
-Screenshots and video assets are available in the `/assets` folder:
-- **Infrastructure Setup**
-- **CI/CD Pipelines**
-- **DNS/Route 53 Configuration**
-- **Video Walkthroughs** (including custom domain mapping)
 
 ## 💡 Open Source Acknowledgement
 
