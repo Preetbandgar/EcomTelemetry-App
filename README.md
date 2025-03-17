@@ -30,12 +30,12 @@ A high-level architecture diagram highlights the system design and component int
 
 ## ✨ Key Features
 
-- Microservices architecture deployed on **AWS EKS**
-- **Infrastructure as Code (IaC)** with **Terraform**
-- Automated **CI/CD pipelines** using **GitHub Actions** and **Argo CD (GitOps)**
+- Microservices architecture deployed on **AWS EKS.**
+- **Infrastructure as Code (IaC)** with **Terraform.**
+- Automated **CI/CD pipelines** using **GitHub Actions** and **Argo CD (GitOps).**
 - **Custom domain** routing via **AWS Route 53**  
   🌐 [www.devopswithpritam.info](./assets/screenshots/Otel_demo_custom-domain.png)
-- End-to-end **automation** from code commit to deployment
+- End-to-end **automation** from code commit to deployment.
 
 ## ☁️ Infrastructure Setup with Terraform
 
@@ -94,6 +94,7 @@ The application was exposed via the **frontendproxy service** and mapped to the 
 ## 🔧 Domain & DNS Configuration
 
 📌 **Route 53 & DNS Setup Screenshots**  
+
 - DNS Records for Domain Mapping
 
   ![DNS Records](./assets/screenshots/dns-records.png)
@@ -106,12 +107,12 @@ The deployment was managed through [`complete-deploy.yaml`](./kubernetes/complet
 
 ## 🌟 Project Highlights
 
-- Deployed a highly available microservices application on **AWS EKS**
-- Developed **Infrastructure as Code (IaC)** with Terraform for **scalable, repeatable** infrastructure provisioning
-- Automated **CI/CD pipelines** with GitHub Actions and Argo CD for **seamless deployments**
-- Ensured code quality and security with **SonarQube**, **GolangCI-Lint**, and **Trivy**
+- Deployed a highly available microservices application on **AWS EKS.**
+- Developed **Infrastructure as Code (IaC)** with Terraform for **scalable, repeatable** infrastructure provisioning.
+- Automated **CI/CD pipelines** with GitHub Actions and Argo CD for **seamless deployments.**
+- Ensured code quality and security with **SonarQube**, **GolangCI-Lint**, and **Trivy.**
 - Implemented **custom domain routing** with AWS Route 53 for the application.
-- Future scope includes **OpenTelemetry observability integration** and **Prometheus/Grafana** monitoring enhancements
+- Future scope includes **OpenTelemetry observability integration** and **Prometheus/Grafana** monitoring enhancements.
 
 ## 💡 Open Source Acknowledgement
 
