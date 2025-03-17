@@ -65,13 +65,13 @@ Implemented an automated **CI/CD pipeline** using **GitHub Actions** and **Argo 
 | **Argo CD Sync**           | Argo CD automatically detects changes, syncs, and triggers a **rolling update** of the microservice deployment |
 
 📌 **CI/CD Pipeline Screenshots:**  
-     -[GitHub Actions Workflow Run](https://github.com/Preetbandgar/EcomTelemetry-App/actions/runs/13877069831)  
-     -[GolangCI-Lint Code Quality Check](https://github.com/Preetbandgar/EcomTelemetry-App/actions/runs/13877069831/job/38830720174)  
-     -[Docker Image Build & Push](https://github.com/Preetbandgar/EcomTelemetry-App/actions/runs/13877069831/job/38830720176)  
-     -[Trivy Image Scan Results](https://github.com/Preetbandgar/EcomTelemetry-App/actions/runs/13877069831/job/38830729444)  
-     -[Kubernetes Manifest Update](https://github.com/Preetbandgar/EcomTelemetry-App/actions/runs/13877069831/job/38830732368)  
-     -[Argo CD Sync Operation](./assets/screenshots/argo-cd-sync.png)  
-     -[Rolling Update in Progress](./assets/screenshots/rolling-update.png)
+     - [GitHub Actions Workflow Run](https://github.com/Preetbandgar/EcomTelemetry-App/actions/runs/13877069831)  
+     - [GolangCI-Lint Code Quality Check](https://github.com/Preetbandgar/EcomTelemetry-App/actions/runs/13877069831/job/38830720174)  
+     - [Docker Image Build & Push](https://github.com/Preetbandgar/EcomTelemetry-App/actions/runs/13877069831/job/38830720176)  
+     - [Trivy Image Scan Results](https://github.com/Preetbandgar/EcomTelemetry-App/actions/runs/13877069831/job/38830729444)  
+     - [Kubernetes Manifest Update](https://github.com/Preetbandgar/EcomTelemetry-App/actions/runs/13877069831/job/38830732368)  
+     - [Argo CD Sync Operation](./assets/screenshots/argo-cd-sync.png)  
+     - [Rolling Update in Progress](./assets/screenshots/rolling-update.png)
 
 ## 🚀 Deployment Details
 
