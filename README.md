@@ -91,7 +91,7 @@ The application is accessed via the **frontendproxy service**, mapped to a **cus
   ![DNS Records](./assets/screenshots/dns-records.png)
 
 - **FrontendProxy Service Exposure**  
-  ![FrontendProxy Service](./assets/screenshots/Opentelemetry-frontendproxy-demo-eks.mp4)
+  ![FrontendProxy Service](./assets/videos/Opentelemetry-frontendproxy-demo-eks.mp4)
 
 Deployment was carried out using the [`complete-deploy.yaml`](./kubernetes/complete-deploy.yaml), containing manifests for all **microservices** and **Kubernetes components**.
 
