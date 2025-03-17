@@ -24,7 +24,7 @@ A high-level **Project Architecture Diagram** provides an overview of system des
 | 🐳 Containers | Docker |
 | 🌐 DNS/Domain | AWS Route 53 |
 | 📦 Artifact Registry | DockerHub |
-| 🔒 Security Scanning | Trivy |
+| 🔒 Docker Image Scan | Trivy |
 | 📝 Code Quality | GolangCI-Lint |
 
 ## ✨ Key Features
@@ -50,7 +50,7 @@ Terraform modules are used to provision:
 
 ## 🔄 CI/CD Pipeline and GitOps Implementation
 
-Implemented an automated **CI/CD pipeline** using **GitHub Actions** and **Argo CD**, specifically managing the deployment of the `productcatalog` microservice.
+Implemented an automated **CI/CD pipeline** using **GitHub Actions** and **Argo CD**, specifically managing the deployment of the [`productcatalog`](https://github.com/Preetbandgar/EcomTelemetry-App/tree/main/kubernetes/productcatalog) microservice.
 
 ### ⚙️ CI/CD Workflow Stages:
 
@@ -83,7 +83,6 @@ The application is accessed via the **frontendproxy service**, mapped to a **cus
 🌐 [www.devopswithpritam.info](https://www.devopswithpritam.info)
 
 ### 🔧 Domain & DNS Configuration:
-Domain mapping and DNS setup have been thoroughly documented with screenshots and a dedicated demo video.
 
 📹 **[Video: Custom Domain Mapping Demo](./assets/videos/custom-domain-demo.mp4)**
 
@@ -92,7 +91,7 @@ Domain mapping and DNS setup have been thoroughly documented with screenshots an
 - [DNS Records for Domain Mapping](./assets/screenshots/dns-records.png)
 - [FrontendProxy Service Exposure](./assets/screenshots/frontendproxy-service.png)
 
-Deployment was carried out using the **[`complete-deploy.yaml`](./kubernetes/complete-deploy.yaml)**, containing manifests for all **microservices** and **Kubernetes components**.
+Deployment was carried out using the [`complete-deploy.yaml`](./kubernetes/complete-deploy.yaml), containing manifests for all **microservices** and **Kubernetes components**.
 
 ## 🌟 Project Highlights
 
