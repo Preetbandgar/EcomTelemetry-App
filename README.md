@@ -36,7 +36,7 @@ A high-level architecture diagram highlights the system design and component int
 - **Infrastructure as Code (IaC)** with **Terraform**
 - Automated **CI/CD pipelines** using **GitHub Actions** and **Argo CD (GitOps)**
 - **Custom domain** routing via **AWS Route 53**  
-  🌐 [www.devopswithpritam.info](https://www.devopswithpritam.info)(./assets/screenshots/Otel_demo_custom-domain.png)
+  🌐 [www.devopswithpritam.info](./assets/screenshots/Otel_demo_custom-domain.png)
 - End-to-end **automation** from code commit to deployment
 
 
@@ -95,9 +95,8 @@ An automated **CI/CD pipeline** was implemented with **GitHub Actions** and **Ar
 
 The application was exposed via the **frontendproxy service**, mapped to the custom domain:  
 
-🌐 ![www.devopswithpritam.info](https://www.devopswithpritam.info)(./assets/screenshots/Otel_demo_custom-domain.png)
+🌐 ![www.devopswithpritam.info](./assets/screenshots/Otel_demo_custom-domain.png)
 
-🌐 [www.devopswithpritam.info](https://www.devopswithpritam.info)(./assets/screenshots/Otel_demo_custom-domain.png)
 
 > ✅ Note: The application was successfully deployed and accessible during the demonstration phase. The screenshots provided illustrate the complete deployment lifecycle.
 
@@ -131,7 +130,9 @@ The deployment was managed through [`complete-deploy.yaml`](./kubernetes/complet
 ## 💡 Open Source Acknowledgement
 
 This project draws inspiration from **OpenTelemetry**. Full credit to the **OpenTelemetry team** and **Mr. Abhishek Veermalla**, whose guidance and resources were instrumental.  
+
 Check out his GitHub for more insightful content:  
+
 👉 [Abhishek's GitHub](https://github.com/iam-veeramalla)
 
 
