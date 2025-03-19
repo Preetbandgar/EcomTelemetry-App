@@ -11,6 +11,8 @@ This project showcases end-to-end **CI/CD automation**, **infrastructure provisi
 > - [`assets/diagrams/`](./assets/diagrams)
 > - [`assets/videos/`](./assets/videos)
 
+---
+
 ## 🏗️ Project Architecture
 
 A high-level architecture diagram highlights the system design and component interactions.
@@ -18,6 +20,8 @@ A high-level architecture diagram highlights the system design and component int
 📌 **Architecture Diagram:**  
 
 ![Project Architecture Diagram](./assets/diagrams/architecture-diagram.png)
+
+---
 
 ## 🛠️ Tech Stack
 
@@ -33,27 +37,33 @@ A high-level architecture diagram highlights the system design and component int
 | 🔒 Image Scanning    | Trivy                                |
 | 📝 Code Quality      | GolangCI-Lint, SonarQube             |
 
+---
+
 ## ✨ Key Features
 
-- Microservices architecture deployed on **AWS EKS.**
-- **Infrastructure as Code (IaC)** with **Terraform.**
-- Automated **CI/CD pipelines** using **GitHub Actions** and **Argo CD (GitOps).**
+- Microservices architecture deployed on **AWS EKS**.
+- **Infrastructure as Code (IaC)** with **Terraform**.
+- Automated **CI/CD pipelines** using **GitHub Actions** and **Argo CD (GitOps)**.
 - **Custom domain** routing via **AWS Route 53**  
-  🌐 [www.devopswithpritam.info](./assets/screenshots/Otel_demo_custom-domain.png)
+  🌐 ![Custom Domain](./assets/screenshots/Otel_demo_custom-domain.png)
 - End-to-end **automation** from code commit to deployment.
+
+---
 
 ## ☁️ Infrastructure Setup with Terraform
 
 The entire infrastructure was provisioned using Terraform, available in the GitHub repository:  
 🔗 [Terraform AWS EKS Repository](https://github.com/Preetbandgar/Terraform-aws-eks.git)
 
-Resources provisioned include:
+### 📌 Resources Provisioned
 
 - **EKS Cluster**
 - **VPC**
 - **IAM Roles**
 - **Route 53 Custom Domain Configuration**
-- **S3 + DynamoDB for Terraform Backend and state locking**
+- **S3 + DynamoDB for Terraform Backend and State Locking**
+
+---
 
 ## 🔄 CI/CD Pipeline and GitOps
 
@@ -71,7 +81,7 @@ An automated **CI/CD pipeline** was implemented with **GitHub Actions** and **Ar
 | **K8s Manifest Update** | Updates Kubernetes manifests with the new image tag            |
 | **Argo CD Sync**        | Syncs with **Argo CD** and triggers rolling updates automatically |
 
-📌 **CI/CD Workflow Links & Screenshots**  
+### 📌 CI/CD Workflow Links & Screenshots
 
 - [GitHub Actions Workflow Run](https://github.com/Preetbandgar/EcomTelemetry-App/actions/runs/13877069831)  
 - [SonarQube Code Quality Check](./assets/screenshots/Sonarqube_Code_Quality.png)  
@@ -79,6 +89,8 @@ An automated **CI/CD pipeline** was implemented with **GitHub Actions** and **Ar
 - [Docker Image Build & Push](https://github.com/Preetbandgar/EcomTelemetry-App/actions/runs/13877069831/job/38830720176)  
 - [Trivy Image Scan Results](https://github.com/Preetbandgar/EcomTelemetry-App/actions/runs/13877069831/job/38830729444)  
 - [Kubernetes Manifest Update](https://github.com/Preetbandgar/EcomTelemetry-App/actions/runs/13877069831/job/38830732368)  
+
+---
 
 ### 📌 Argo CD Sync & Deployment Validation
 
@@ -94,30 +106,34 @@ The application was exposed via the **frontendproxy service** and mapped to the 
 
 ![Application on Custom Domain](./assets/screenshots/Otel_demo_custom-domain.png)
 
-> ✅ Note: The application was successfully deployed and accessible during the demonstration phase. The screenshots provided illustrate the complete deployment lifecycle.
+> ✅ **Note**: The application was successfully deployed and accessible during the demonstration phase. The screenshots provided illustrate the complete deployment lifecycle.
+
+---
 
 ## 🔧 Domain & DNS Configuration
 
-📌 **Route 53 & DNS Setup Screenshots**  
+📌 **Route 53 & DNS Setup Screenshots**
 
-- DNS Records for Domain Mapping
-
+- DNS Records for Domain Mapping  
   ![DNS Records](./assets/screenshots/dns-records.png)
 
-- FrontendProxy Service Exposure (without custom domain)
-
+- FrontendProxy Service Exposure (without custom domain)  
   ![FrontendProxy Service](./assets/screenshots/Opentelemetry-frontendproxy-demo-eks.gif)
 
 The deployment was managed through [`complete-deploy.yaml`](./kubernetes/complete-deploy.yaml), which contains combined manifests of all microservices and Kubernetes components.
 
+---
+
 ## 🌟 Project Highlights
 
-- Deployed a highly available microservices application on **AWS EKS.**
+- Deployed a highly available microservices application on **AWS EKS**.
 - Developed **Infrastructure as Code (IaC)** with Terraform for **scalable, repeatable** infrastructure provisioning.
-- Automated **CI/CD pipelines** with GitHub Actions and Argo CD for **seamless deployments.**
-- Ensured code quality and security with **SonarQube**, **GolangCI-Lint**, and **Trivy.**
+- Automated **CI/CD pipelines** with GitHub Actions and Argo CD for **seamless deployments**.
+- Ensured code quality and security with **SonarQube**, **GolangCI-Lint**, and **Trivy**.
 - Implemented **custom domain routing** with AWS Route 53 for the application.
 - Future scope includes **OpenTelemetry observability integration** and **Prometheus/Grafana** monitoring enhancements.
+
+---
 
 ## 💡 Open Source Acknowledgement
 
@@ -126,5 +142,7 @@ This project draws inspiration from **OpenTelemetry**. Full credit to the **Open
 Check out his GitHub for more insightful content:  
 
 👉 [Abhishek's GitHub](https://github.com/iam-veeramalla)
+
+---
 
 ## 🙏 Thank You!
