@@ -6,6 +6,11 @@ EcomTelemetry is an open-source, microservices-based **e-commerce** application 
 
 This project showcases end-to-end **CI/CD automation**, **infrastructure provisioning**, and **GitOps deployment**, aligning with best practices in modern **DevOps and cloud-native application management**.
 
+> 📂 **Note**: All **screenshots**, **diagrams**, and **videos** referenced in this documentation are available in the `assets` folder under the following subdirectories:
+> - [`assets/screenshots/`](./assets/scrrenshots)
+> - [`assets/diagrams/`](./assets/diagrams)
+> - [`assets/videos/`](./assets/videos)
+
 ## 🏗️ Project Architecture
 
 A high-level architecture diagram highlights the system design and component interactions.
