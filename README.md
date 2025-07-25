@@ -44,8 +44,8 @@ A high-level architecture diagram highlights the system design and component int
 - Microservices architecture deployed on **AWS EKS**.
 - **Infrastructure as Code (IaC)** with **Terraform**.
 - Automated **CI/CD pipelines** using **GitHub Actions** and **Argo CD (GitOps)**.
-- **Custom domain** routing via **AWS Route 53**  
-  🌐 ![Custom Domain](./assets/screenshots/Otel_demo_custom-domain.png)
+- **Custom domain** routing via **AWS Route 53🌐** 
+![Custom Domain](./assets/screenshots/Otel_demo_custom-domain.png)
 - End-to-end **automation** from code commit to deployment.
 
 ---
